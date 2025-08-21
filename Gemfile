@@ -9,9 +9,6 @@ gem "logger"
 gem "ostruct"
 gem "base64"
 
-# 테마 (선택사항 - 나중에 제거 가능)
-gem "minima", "~> 2.5"
-
 # Jekyll 플러그인
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
