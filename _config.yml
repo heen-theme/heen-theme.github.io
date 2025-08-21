@@ -4,7 +4,7 @@ email: leetaewon@getsocial.kr
 description: >-
   A minimalist Jekyll theme for modern websites
 baseurl: ""
-url: "http://localhost:4000"
+url: "https://heen.kr"
 
 # Build settings
 markdown: kramdown
