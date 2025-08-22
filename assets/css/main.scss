@@ -2,47 +2,87 @@
 ---
 
 @charset "utf-8";
+
+/*!------------------------------------------------------------------
+[HEEN JEKYLL THEME - MAIN STYLESHEET]
+-------------------------------------------------------------------*/
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+:: Theme name: Heen
+:: Heen is a modern, minimalist Jekyll theme designed for developers, 
+   creators, and professionals. Built with flexibility and performance 
+   in mind, Heen offers clean typography, responsive design, and 
+   seamless integration with Jekyll's ecosystem. Perfect for blogs, 
+   portfolios, and documentation sites.
+:: Theme Author: [Your Name]
+:: Version: 1.0.0
+:: Built with: Modern CSS Grid, Flexbox, and CSS Custom Properties
+:: Compatible with: Jekyll 4.0+, GitHub Pages
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>
+:: Architecture Overview
+    0-Settings: Variables, colors, mixins, helpers
+    1-Tools: Normalize, reset, utilities, animations
+    2-Base: Typography, forms, basic elements
+    3-Modules: Header, footer, cards, buttons, navigation
+    4-Layouts: Page layouts, post layouts, grid systems
+    5-Custom: Project-specific customizations
+<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
 @use "sass:color";
+@use "sass:math";
 
-// Define defaults for each variable.
+/* =======================
+:: 0-Settings (Configuration)
+======================= */
 
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !default;
-$base-font-size:   16px !default;
-$base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
-$base-line-height: 1.5 !default;
+/* =======================
+:: 0-Settings (Configuration)
+======================= */
+@use "0-settings/variables";
+@use "0-settings/color-scheme";
+@use "0-settings/mixins";
+@use "0-settings/helpers";
 
-$spacing-unit:     30px !default;
+/* =======================
+:: 1-Tools (Utilities & Libraries)
+======================= */
+@use "1-tools/normalize";
+@use "1-tools/reset";
+@use "1-tools/shared";
+@use "1-tools/syntax-highlighting";
+@use "1-tools/grid";
+@use "1-tools/animate";
 
-$text-color:       #111 !default;
-$background-color: #fdfdfd !default;
-$brand-color:      #2a7ae4 !default;
+/* =======================
+:: 2-Base (Foundation Styles)
+======================= */
+@use "2-base/base";
+@use "2-base/typography";
+@use "2-base/forms";
 
-$grey-color:       #828282 !default;
-$grey-color-light: color.scale($grey-color, $lightness: 67%) !default;
-$grey-color-dark:  color.scale($grey-color, $lightness: -33%) !default;
-$orange-color:     #f66a0a !default;
-$table-text-align: left !default;
+/* =======================
+:: 3-Modules (Components)
+======================= */
+@use "3-modules/header";
+@use "3-modules/navigation";
+@use "3-modules/footer";
+@use "3-modules/buttons";
+@use "3-modules/cards";
+@use "3-modules/hero";
+@use "3-modules/sections";
 
-// Width of the content area
-$content-width:    800px !default;
+/* =======================
+:: 4-Layouts (Page Structure)
+======================= */
+@use "4-layouts/default";
+@use "4-layouts/post";
+@use "4-layouts/page";
+@use "4-layouts/archive";
 
-$on-palm:          600px !default;
-$on-laptop:        800px !default;
-
-// Mixins
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
-}
-
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-// Import partials.
-@import
-  "base",
-  "layout"
-;
+/* =======================
+:: 5-Custom (Project Specific)
+======================= */
+@use "5-custom/crafto-integration";
+@use "5-custom/custom-components";

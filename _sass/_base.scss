@@ -93,7 +93,7 @@ a {
   text-decoration: none;
 
   &:visited {
-    color.scale($color, $lightness: -30%);
+    color: color.scale($color, $lightness: -30%);
   }
 
   &:hover {
