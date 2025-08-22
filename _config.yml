@@ -1,26 +1,53 @@
-# Site settings
-title: 흰 테마 - Heen Jekyll Theme
-email: leetaewon@getsocial.kr
-description: >-
-  A minimalist Jekyll theme for modern websites
-baseurl: ""
-url: "https://heen.kr"
+#-------------------------------
+# General Site Settings
+title: "AIWC (AI 웹소설 코치)"
+description: "AIWC와 함께 웹소설을 제작해 봅시다"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://heen.kr" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Build settings
+# 날짜 형식 설정
+# minima:
+#   date_format: "%Y-%m-%d"
+
+#-------------------------------
+# Build Settings
 markdown: kramdown
-highlighter: rouge
+permalink: /:title/
 plugins:
-  - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
 
+paginate: 7
+paginate_path: "/blog/page/:num"
+
+
+#-------------------------------
 # Collections
 collections:
+  pages:
+    output: true
+    permalink: /:name/
   posts:
     output: true
-    permalink: /:categories/:year/:month/:day/:title:output_ext
+    permalink: /blog/:slug/
+  projects:
+    output: true
+    permalink: /project/:slug/
+  categories:
+    output: true
+    permalink: /category/:name/
 
-# Defaults
+# Pages Path
 defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
   - scope:
       path: ""
       type: "posts"
@@ -28,16 +55,10 @@ defaults:
       layout: "post"
   - scope:
       path: ""
-      type: "pages"
+      type: "projects"
     values:
-      layout: "page"
+      layout: "project"
 
-# Exclude from processing
-exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/
+sass:
+  sass_dir: _sass
+  style: compressed
