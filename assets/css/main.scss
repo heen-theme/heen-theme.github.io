@@ -23,10 +23,12 @@
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>
 :: Architecture Overview
     0-Settings: Variables, colors, mixins, helpers
-    1-Tools: Normalize, reset, utilities, animations
+    1-Tools: Normalize, reset, shared, syntax highlighting, grid, animate, splide
     2-Base: Typography, forms, basic elements
-    3-Modules: Header, footer, cards, buttons, navigation
-    4-Layouts: Page layouts, post layouts, grid systems
+    3-Modules: Header, search, pagination, buttons, gallery, hero, projects, 
+               testimonials, article, share, page-navigation, about, faq, 
+               subscribe, footer, sections, contact
+    4-Layouts: Post, project, tags page
     5-Custom: Project-specific customizations
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
@@ -36,53 +38,57 @@
 /* =======================
 :: 0-Settings (Configuration)
 ======================= */
+@use "0-settings/variables";    // 색상, 폰트, 간격 등 기본 변수들
+@use "0-settings/color-scheme"; // 라이트/다크 모드 색상 체계
+@use "0-settings/mixins";       // 재사용 가능한 Sass 함수들 (미디어쿼리, 애니메이션 등)
+@use "0-settings/helpers";      // 유틸리티 클래스들 (margin, padding, text-align 등)
 
 /* =======================
-:: 0-Settings (Configuration)
+:: 1-Tools and Libs
 ======================= */
-@use "0-settings/variables";
-@use "0-settings/color-scheme";
-@use "0-settings/mixins";
-@use "0-settings/helpers";
+@use "1-tools/normalize";           // 브라우저 기본 스타일 초기화
+@use "1-tools/reset";               // CSS 초기화
+@use "1-tools/shared";              // 공통 유틸리티 클래스
+@use "1-tools/syntax-highlighting"; // 코드 하이라이팅 스타일
+@use "1-tools/grid";                // 그리드 시스템
+@use "1-tools/animate";             // 애니메이션 효과
+@use "1-tools/splide";              // 슬라이더 컴포넌트
 
 /* =======================
-:: 1-Tools (Utilities & Libraries)
+:: 2-Base Styles
 ======================= */
-@use "1-tools/normalize";
-@use "1-tools/reset";
-@use "1-tools/shared";
-@use "1-tools/syntax-highlighting";
-@use "1-tools/grid";
-@use "1-tools/animate";
+@use "2-base/base";                 // 기본 HTML 요소 스타일
 
 /* =======================
-:: 2-Base (Foundation Styles)
+:: 3-Modules
 ======================= */
-@use "2-base/base";
-@use "2-base/typography";
-@use "2-base/forms";
+@use "3-modules/header";            // 헤더 네비게이션
+@use "3-modules/search";            // 검색 기능
+@use "3-modules/pagination";        // 페이지네이션
+@use "3-modules/buttons";           // 버튼 스타일
+@use "3-modules/gallery";           // 갤러리 및 이미지
+@use "3-modules/hero";              // 히어로 섹션
+@use "3-modules/projects";          // 프로젝트 카드
+@use "3-modules/testimonials";      // 고객 후기
+@use "3-modules/article";           // 블로그 포스트
+@use "3-modules/share";             // 소셜 공유
+@use "3-modules/page-navigation";   // 페이지 간 네비게이션
+@use "3-modules/about";             // 소개 페이지
+@use "3-modules/faq";               // FAQ 섹션
+@use "3-modules/subscribe";         // 구독 폼
+@use "3-modules/footer";            // 푸터
+@use "3-modules/sections";          // 범용 섹션
+@use "3-modules/contact";           // 연락처 폼
 
 /* =======================
-:: 3-Modules (Components)
+:: 4-Layouts
 ======================= */
-@use "3-modules/header";
-@use "3-modules/navigation";
-@use "3-modules/footer";
-@use "3-modules/buttons";
-@use "3-modules/cards";
-@use "3-modules/hero";
-@use "3-modules/sections";
+@use "4-layouts/post";            // 블로그 포스트 레이아웃
+@use "4-layouts/page";            // 페이지 레이아웃
+@use "4-layouts/archive";         // 아카이브 페이지 레이아웃
 
 /* =======================
-:: 4-Layouts (Page Structure)
+:: 5-Custom
 ======================= */
-@use "4-layouts/default";
-@use "4-layouts/post";
-@use "4-layouts/page";
-@use "4-layouts/archive";
-
-/* =======================
-:: 5-Custom (Project Specific)
-======================= */
-@use "5-custom/crafto-integration";
-@use "5-custom/custom-components";
+@use "5-custom/code-styles";        // 코드 블록 커스텀 스타일
+@use "5-custom/heen-custom";        // Heen 테마 커스터마이징
