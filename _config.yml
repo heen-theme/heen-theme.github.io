@@ -3,7 +3,7 @@
 title: "AIWC (AI 웹소설 코치)"
 description: "AIWC와 함께 웹소설을 제작해 봅시다"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://aiwc.kr" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://heen.kr" # the base hostname & protocol for your site, e.g. http://example.com
 
 # 날짜 형식 설정
 # minima:
