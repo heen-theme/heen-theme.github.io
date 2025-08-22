@@ -83,9 +83,9 @@
 /* =======================
 :: 4-Layouts
 ======================= */
-@use "4-layouts/post";            // 블로그 포스트 레이아웃
-@use "4-layouts/page";            // 페이지 레이아웃
-@use "4-layouts/archive";         // 아카이브 페이지 레이아웃
+@use "4-layouts/post";            // Post 전용 (태그, 메타, 공유, 댓글)
+@use "4-layouts/page";            // Page 전용 (브레드크럼브, CTA, 사이드바
+@use "4-layouts/archive";         // Archive 전용 (목록, 필터, 검색)
 
 /* =======================
 :: 5-Custom
