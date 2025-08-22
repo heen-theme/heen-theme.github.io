@@ -1,45 +1,25 @@
 ---
 layout: default
+image: '/images/01.jpg'
 ---
 
-<div class="home">
-  {% assign hero = site.data.homepage.hero %}
-  <section class="hero">
-    <h1 class="hero-title">{{ hero.title }}</h1>
-    <h2 class="hero-subtitle">{{ hero.subtitle }}</h2>
-    <p class="hero-description">{{ hero.description }}</p>
-    <a href="{{ hero.button_url }}" class="btn btn-primary">{{ hero.button_text }}</a>
-  </section>
+{% include section-hero.html %}
 
-  {% assign features = site.data.homepage.features %}
-  <section class="features">
-    <h2>{{ features.title }}</h2>
-    <div class="features-grid">
-      {% for feature in features.items %}
-        <div class="feature-item">
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
+{% include section-about.html %}
 
-  {% if site.posts.size > 0 %}
-    <section class="recent-posts">
-      <h2>Recent Posts</h2>
-      <ul class="post-list">
-        {% for post in site.posts limit:3 %}
-          <li>
-            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-            <h3>
-              <a class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title | escape }}
-              </a>
-            </h3>
-          </li>
-        {% endfor %}
-      </ul>
-      <p><a href="/blog/">View all posts →</a></p>
-    </section>
-  {% endif %}
-</div>
+{% include section-process.html %}
+
+{% include section-testimonials.html %}
+
+{% include section-blog.html %}
+
+<!-- 홈페이지 FAQ (챗봇 버튼 포함) -->
+{% assign homepage_faq = site.data.homepage.faq %}
+{% include section-faq.html 
+   title=homepage_faq.title
+   description=homepage_faq.description
+   items=homepage_faq.items
+   enable=homepage_faq.enable
+   button_text=homepage_faq.button_text
+   button_link=homepage_faq.button_link %}
+   

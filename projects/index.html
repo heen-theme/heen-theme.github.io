@@ -1,0 +1,50 @@
+---
+layout: default
+title: AIWC 11단계 프로세스
+description: AIWC는 장르 키워드 융합과 체계적 11단계 프로세스로 아이디어부터 연재까지 웹소설 창작의 전 과정을 지원하는 혁신적인 시스템입니다.
+image: '/images/cover/process-cover.jpg'
+---
+
+<div class="container">
+  <div class="page-head">
+    {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="container projects-page animate">
+  <div class="row">
+    {% for project in site.projects <!-- reversed --> %}
+    <article class="project col col-3 col-d-6 col-t-12">
+      <div class="project-content">
+        <a href="{{ project.url }}" class="project__image">
+          <img class="lazy" data-src="{{ project.image }}" alt="{{ project.title }}">
+        </a>
+        <div class="project__info">
+          {% if project.label %}
+            <div class="project__label">{{ project.label }}</div>
+          {% endif %}
+          <h2 class="project__title">
+            <a href="{{ project.url }}">{{ project.title }}</a>
+          </h2>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="container projects-page">
+  {% assign process_faq = site.data.process.faq %}
+  {% include section-faq.html 
+    title=process_faq.title
+    description=process_faq.description
+    items=process_faq.items
+    enable=process_faq.enable
+    button_text=process_faq.button_text
+    button_link=process_faq.button_link %}
+</div>

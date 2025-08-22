@@ -1,27 +1,29 @@
 ---
 layout: default
-title: Blog
-permalink: /blog/
+title: 웹소설 창작 인사이트
+description: 기초 이론부터 고급 AI 활용법까지, 웹소설 창작의 모든 과정을 실전 경험과 함께 안내합니다. 창작자들의 성장을 돕는 체계적인 가이드와 실용적 팁을 만나보세요.
+image: '/images/cover/blog-cover.jpg'
 ---
 
-<div class="home">
-  <h1 class="page-heading">{{ page.title }}</h1>
-
-  {% if site.posts.size > 0 %}
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <h3>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-          </h3>
-          {% if site.show_excerpts %}
-            {{ post.excerpt }}
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+<div class="container">
+  <div class="page-head">
+    {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+  </div>
 </div>
+
+<div class="container blog-page">
+  <div class="row grid">
+    {% if site.posts.size > 0 %}
+      {% for post in paginator.posts offset:0 %}
+        {% include article.html %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% include pagination.html %}
