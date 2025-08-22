@@ -32,63 +32,60 @@
     5-Custom: Project-specific customizations
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
-@use "sass:color";
-@use "sass:math";
-
 /* =======================
 :: 0-Settings (Configuration)
 ======================= */
-@use "0-settings/variables";    // 색상, 폰트, 간격 등 기본 변수들
-@use "0-settings/color-scheme"; // 라이트/다크 모드 색상 체계
-@use "0-settings/mixins";       // 재사용 가능한 Sass 함수들 (미디어쿼리, 애니메이션 등)
-@use "0-settings/helpers";      // 유틸리티 클래스들 (margin, padding, text-align 등)
+@import "0-settings/variables";    // 색상, 폰트, 간격 등 기본 변수들
+@import "0-settings/color-scheme"; // 라이트/다크 모드 색상 체계
+@import "0-settings/mixins";       // 재사용 가능한 Sass 함수들 (미디어쿼리, 애니메이션 등)
+@import "0-settings/helpers";      // 유틸리티 클래스들 (margin, padding, text-align 등)
 
 /* =======================
 :: 1-Tools and Libs
 ======================= */
-@use "1-tools/normalize";           // 브라우저 기본 스타일 초기화
-@use "1-tools/reset";               // CSS 초기화
-@use "1-tools/shared";              // 공통 유틸리티 클래스
-@use "1-tools/syntax-highlighting"; // 코드 하이라이팅 스타일
-@use "1-tools/grid";                // 그리드 시스템
-@use "1-tools/animate";             // 애니메이션 효과
-@use "1-tools/splide";              // 슬라이더 컴포넌트
+@import "1-tools/normalize";           // 브라우저 기본 스타일 초기화
+@import "1-tools/reset";               // CSS 초기화
+@import "1-tools/shared";              // 공통 유틸리티 클래스
+@import "1-tools/syntax-highlighting"; // 코드 하이라이팅 스타일
+@import "1-tools/grid";                // 그리드 시스템
+@import "1-tools/animate";             // 애니메이션 효과
+@import "1-tools/splide";              // 슬라이더 컴포넌트
 
 /* =======================
 :: 2-Base Styles
 ======================= */
-@use "2-base/base";                 // 기본 HTML 요소 스타일
+@import "2-base/base";                 // 기본 HTML 요소 스타일
 
 /* =======================
 :: 3-Modules
 ======================= */
-@use "3-modules/header";            // 헤더 네비게이션
-@use "3-modules/search";            // 검색 기능
-@use "3-modules/pagination";        // 페이지네이션
-@use "3-modules/buttons";           // 버튼 스타일
-@use "3-modules/gallery";           // 갤러리 및 이미지
-@use "3-modules/hero";              // 히어로 섹션
-@use "3-modules/projects";          // 프로젝트 카드
-@use "3-modules/testimonials";      // 고객 후기
-@use "3-modules/article";           // 블로그 포스트
-@use "3-modules/share";             // 소셜 공유
-@use "3-modules/page-navigation";   // 페이지 간 네비게이션
-@use "3-modules/about";             // 소개 페이지
-@use "3-modules/faq";               // FAQ 섹션
-@use "3-modules/subscribe";         // 구독 폼
-@use "3-modules/footer";            // 푸터
-@use "3-modules/sections";          // 범용 섹션
-@use "3-modules/contact";           // 연락처 폼
+@import "3-modules/header";            // 헤더 네비게이션
+@import "3-modules/search";            // 검색 기능
+@import "3-modules/pagination";        // 페이지네이션
+@import "3-modules/buttons";           // 버튼 스타일
+@import "3-modules/gallery";           // 갤러리 및 이미지
+@import "3-modules/hero";              // 히어로 섹션
+@import "3-modules/projects";          // 프로젝트 카드
+@import "3-modules/testimonials";      // 고객 후기
+@import "3-modules/article";           // 블로그 포스트
+@import "3-modules/share";             // 소셜 공유
+@import "3-modules/page-navigation";   // 페이지 간 네비게이션
+@import "3-modules/about";             // 소개 페이지
+@import "3-modules/faq";               // FAQ 섹션
+@import "3-modules/subscribe";         // 구독 폼
+@import "3-modules/footer";            // 푸터
+@import "3-modules/sections";          // 범용 섹션
+@import "3-modules/contact";           // 연락처 폼
 
 /* =======================
 :: 4-Layouts
 ======================= */
-@use "4-layouts/post";            // Post 전용 (태그, 메타, 공유, 댓글)
-@use "4-layouts/page";            // Page 전용 (브레드크럼브, CTA, 사이드바
-@use "4-layouts/archive";         // Archive 전용 (목록, 필터, 검색)
+@import "4-layouts/post";            // Post 전용 (태그, 메타, 공유, 댓글)
+@import "4-layouts/page";            // Page 전용 (브레드크럼브, CTA, 사이드바
+@import "4-layouts/archive";         // Archive 전용 (목록, 필터, 검색)
 
 /* =======================
 :: 5-Custom
 ======================= */
-@use "5-custom/code-styles";        // 코드 블록 커스텀 스타일
-@use "5-custom/heen-custom";        // Heen 테마 커스터마이징
+@import "5-custom/code-styles";        // 코드 블록 커스텀 스타일
+@import "5-custom/heen-custom";        // Heen 테마 커스터마이징
