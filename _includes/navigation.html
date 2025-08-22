@@ -9,7 +9,7 @@
   </label>
 
   <div class="trigger">
-    {% for nav_item in site.data.global.navigation %}
+    {% for nav_item in site.data.settings.navigation %}
       <a class="page-link" href="{{ nav_item.url | relative_url }}">{{ nav_item.name }}</a>
     {% endfor %}
   </div>

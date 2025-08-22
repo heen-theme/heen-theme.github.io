@@ -5,16 +5,16 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">{{ site.data.global.site.title | escape }}</li>
-          {% if site.data.global.site.email %}
-            <li><a class="u-email" href="mailto:{{ site.data.global.site.email }}">{{ site.data.global.site.email }}</a></li>
+          <li class="p-name">{{ site.data.settings.site.title | escape }}</li>
+          {% if site.data.settings.site.email %}
+            <li><a class="u-email" href="mailto:{{ site.data.settings.site.email }}">{{ site.data.settings.site.email }}</a></li>
           {% endif %}
         </ul>
       </div>
 
       <div class="footer-col footer-col-2">
         <ul class="social-media-list">
-          {% for social in site.data.global.social %}
+          {% for social in site.data.settings.social %}
             <li>
               <a href="{{ social.url }}">
                 <span class="username">{{ social.name }}</span>
@@ -25,7 +25,7 @@
       </div>
 
       <div class="footer-col footer-col-3">
-        <p>{{ site.data.global.footer.copyright }}</p>
+        <p>{{ site.data.settings.footer.copyright }}</p>
       </div>
     </div>
   </div>
