@@ -1,146 +1,193 @@
-#-------------------------------
-# Site Settings
-title: AIWC (AI 웹소설 코치)
-logo: '/images/logo/logo.png' # You can add own logo. For example '/images/logo.png'.
-logo_dark: '/images/logo/logo-dark.png'
-description: AIWC는 웹소설 창작을 체계적으로 지원하는 통합 코칭 시스템입니다. 아이디어 발굴부터 연재 완성까지, 전 과정을 단계별로 안내합니다.
-color_scheme: auto # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+# =============================================================================
+# HEEN THEME - CONTENT & UI SETTINGS (_data/settings.yml)
+# =============================================================================
+# 콘텐츠 및 UI 설정 (개발 서버 재시작 없이 변경 가능)
 
+# ===================================
+# 사이트 브랜딩
+# ===================================
+branding:
+  logo: "/assets/images/logo.svg"
+  logo_alt: "/assets/images/logo-alt.svg"
+  favicon: "/assets/images/favicon.ico"
+  brand_color: "#2563eb"
+  secondary_color: "#64748b"
+  tagline: "Modern Jekyll theme with Crafto integration"
+  
+# ===================================
+# 메인 네비게이션
+# ===================================
+navigation:
+  main:
+    - name: "Home"
+      url: "/"
+      icon: "fas fa-home"
+    - name: "About"
+      url: "/about/"
+      icon: "fas fa-user"
+    - name: "Projects"
+      url: "/projects/"
+      icon: "fas fa-briefcase"
+    - name: "Blog" 
+      url: "/blog/"
+      icon: "fas fa-blog"
+    - name: "Contact"
+      url: "/contact/"
+      icon: "fas fa-envelope"
+  
+  mobile:
+    - name: "Home"
+      url: "/"
+      icon: "fas fa-home"
+    - name: "Projects"
+      url: "/projects/"
+      icon: "fas fa-briefcase"
+    - name: "Blog"
+      url: "/blog/"
+      icon: "fas fa-blog"
+    - name: "Contact"
+      url: "/contact/"
+      icon: "fas fa-envelope"
 
-#-------------------------------
-# Navigation Settings
-menu_settings:
-  menu_items:
-    # - title: 'Home'
-    #   url: '/'
-    - title: 'AIWC 소개'
-      url: '/about/'
-    - title: '프로세스'
-      url: '/projects/'
-    - title: '시작하기'
-      url: '/start/'
-    - title: '블로그'
-      url: '/blog/'
-    - title: '연락하기'
-      url: '/contact/'
-
-    # - title: 'Pages'
-    #   submenu:
-    #   - url: '/elements/'
-    #     title: 'Elements'
-
-
-#-------------------------------
-# Author Settings
-author:
-  author_name: AI 웹소설 코치
-  author_avatar: '/images/logo/mascot.png'
-
-
-#-------------------------------
-# Hero Settings
-hero:
-  enable: true
-  hero_role: AI 웹소설 코치 ∙ 창작 시스템 ∙ 스토리텔링 파트너
-  hero_title: 11단계 프로세스로 <img src="/images/logo/mascot-280.png" alt="AI 웹소설 코치" loading="lazy"> <br> 당신만의 웹소설을 만들어보세요
-  hero_description: 아이디어부터 연재까지, 웹소설 창작의 모든 단계를 체계적으로 안내하는 AI 창작 파트너
-  hero_button_text: 
-  hero_button_link: 
-
-#-------------------------------
-# About Section Settings
-about:
-  enable: true
-  about_image: '/images/sites/about-image.jpg' # Add your about image. For example '/images/about-image.png'
-  about_title: 웹소설 창작의 새로운 방법
-  about_description: 복잡해 보이는 웹소설 창작을 체계적이고 재미있는 과정으로 만듭니다. AIWC와 함께라면 아이디어 하나로 시작해서 완성된 연재작까지, 단계별 가이드로 누구나 작가가 될 수 있습니다.
-  about_button_text: AIWC 자세히 알아보기
-  about_button_link: "/about/"
-
-#-------------------------------
-# Projects Section Settings
-projects:
-  enable: true
-  projects_title: AIWC 주요 창작 단계
-  projects_description: AIWC의 체계적 11단계 프로세스로 아이디어와 콘텐츠를 웹소설로 만드는 핵심 단계들을 미리 살펴보세요.
-  projects_button_text: 11단계 프로세스 자세히 알아보기
-  projects_button_link: "/projects/"
-
-#-------------------------------
-# Blog Section Settings
-# _data/settings.yml에 추가
-blog:
-  enable: true
-  blog_title: "웹소설 창작 인사이트"
-  blog_description: 웹소설 창작의 깊이 있는 통찰과 실용적 가이드로 창작 역량을 키워보세요.
-  fallback_image: "/images/sites/default.jpg"  # 폴백 이미지 경로  
-
-#-------------------------------
-# Testimonials Section Settings
-testimonials:
-  enable: false # Set to true to enable the testimonials section
-  testimonials_title: What People Say?
-  testimonials_description: Hear from those who have experienced the transformative power of my artistry and design. These testimonials showcase the success stories born from our collaborative partnerships.
-  testimonials_info: Loved by 50+ customers
-  testimonial_items:
-    - name: "John Smith"
-      image: "/images/client-1.jpg"
-      designation: "CEO of Creative Innovations"
-      content : "Collaborating was a seamless experience. The creativity and execution brought our project to life in ways we couldn't have imagined."
-
-    - name: "David Wilson"
-      image: "/images/client-2.jpg"
-      designation: "Senior Designer at Elegance Studios"
-      content : "The elegant and modern design aesthetic was exactly what we needed. The work was both inspiring and flawlessly executed."
-
-    - name: "Sarah Davis"
-      image: "/images/client-3.jpg"
-      designation: "Director of FutureTech Labs"
-      content : "The blend of technology and art was masterful. Every piece showcased a deep understanding of both disciplines."
-
-
-#-------------------------------
-# Newsletter Settings
-mailchimp:
-  enable: false
-  mailchimp_title: Stay inspired weekly. Your friendly dose of tips & insights!
-  mailchimp_description: Every Sunday, I deliver actionable tips for enhancing productivity, practical life advice, and top-notch insights gathered from various sources, right to your email inbox.
-  mailchimp_identifier: gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
-  mailchimp_input_text: Your email address...
-  mailchimp_button_text: Subscribe
-  mailchimp_background_image: '/images/subscribe-bg.jpg'
-
-
-#-------------------------------
-# Social Links
+# ===================================
+# 소셜 미디어 링크
+# ===================================
 social:
-- {icon: "fa-brands fa-github", name: "Github", link: "https://github.com/AIWC-official"}
-- {icon: "fa-brands fa-youtube", name: "YouTube", link: "https://www.youtube.com/@aiwc-official"}
+  github: "heen-theme"
+  twitter: "heen_theme"
+  linkedin: "heen-theme"
+  instagram: "heen.theme"
+  youtube: "@heen-theme"
+  facebook: "heen.theme"
+  email: "hello@heen-theme.com"
 
-# - {icon: "fa-brands fa-instagram", name: "Instagram", link: "https://instagram.com"}
-# - {icon: "fa-brands fa-facebook", name: "Facebook", link: "https://facebook.com"}
-# - {icon: "fa-brands fa-x-twitter", name: "Twitter", link: "https://twitter.com"}
-# - {icon: "fa-brands fa-tiktok", name: "Tiktok", link: "https://tiktok.com"}
+# ===================================
+# 전역 기능 활성화/비활성화
+# ===================================
+features:
+  back_to_top: true
+  smooth_scroll: true
+  reading_progress: true
+  print_stylesheet: true
+  search_highlight: true
+  lazy_loading: true
 
-# Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
-# Other icons can be found at https://fontawesome.com/icons
+# ===================================
+# 블로그 설정
+# ===================================
+blog:
+  show_excerpt: true
+  excerpt_length: 160
+  show_reading_time: true
+  show_tags: true
+  show_categories: true
+  show_author: true
+  related_posts: 3
+  comments_enabled: true
 
+# ===================================
+# 프로젝트 설정
+# ===================================
+projects:
+  show_categories: true
+  show_tags: true
+  grid_layout: 3
+  show_featured: true
+  featured_count: 6
+  show_github_link: true
 
-#-------------------------------
-# Contact Settings
-contact:
-  contact_email: mblyvkdq # Add your form_id
-  contact_button_text: 전송하기
+# ===================================
+# 전역 기본 연락처 (푸터 등에서 사용)
+# ===================================
+site_contact:
+  email: "hello@heen-theme.com"
+  phone: "+82-10-1234-5678"
+  address: "Seoul, South Korea"
 
-# NOTE
-# Renva theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
+# ===================================
+# 푸터 설정
+# ===================================
+footer:
+  copyright: "© 2024 Heen Theme. All rights reserved."
+  links:
+    - name: "Privacy Policy"
+      url: "/privacy/"
+    - name: "Terms of Service"
+      url: "/terms/"
+    - name: "Documentation"
+      url: "/docs/"
+    - name: "Support"
+      url: "/support/"
 
+# ===================================
+# 댓글 시스템
+# ===================================
+comments:
+  provider: "disqus"
+  disqus_shortname: "heen-theme"
+  giscus:
+    repo: "heen-theme/heen-theme"
+    repo_id: ""
+    category: "General"
+    category_id: ""
 
-#-------------------------------
-# Comment Section (Disqus)
-disqus-identifier: aiwc # Add your shortname for Disqus Comment. For example anvod-studio-test
+# ===================================
+# 분석 도구
+# ===================================
+analytics:
+  google_analytics: ""
+  google_tag_manager: ""
+  google_site_verification: ""
 
+# ===================================
+# 검색 기능
+# ===================================
+search:
+  enabled: true
+  provider: "lunr"
+  placeholder: "Search posts and projects..."
+  show_results_count: true
 
-#-------------------------------
-# Google Analytics
-google-analytics: G-WYF1RXQRPY # Add your GA Tracking Id
+# ===================================
+# 다크 모드
+# ===================================
+dark_mode:
+  enabled: true
+  default: "auto"
+  toggle_position: "header"
+
+# ===================================
+# PWA 설정
+# ===================================
+pwa:
+  enabled: false
+  app_name: "Heen Theme"
+  short_name: "Heen"
+  theme_color: "#2563eb"
+  background_color: "#ffffff"
+  display: "standalone"
+
+# ===================================
+# 뉴스레터 구독
+# ===================================
+newsletter:
+  enabled: false
+  provider: "mailchimp"
+  endpoint: ""
+  title: "Stay Updated"
+  description: "Get the latest updates and insights delivered to your inbox."
+
+# ===================================
+# 기능 토글 (전역 시스템 기능)
+# ===================================
+features:
+  back_to_top: true
+  smooth_scroll: true
+  reading_progress: true
+  print_stylesheet: true
+  search_highlight: true
+  lazy_loading: true
+  image_optimization: true
+  css_minification: true
+  js_minification: true
+  preload_fonts: true
