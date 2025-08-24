@@ -1,64 +1,164 @@
-#-------------------------------
-# General Site Settings
-title: "AIWC (AI 웹소설 코치)"
-description: "AIWC와 함께 웹소설을 제작해 봅시다"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://heen.kr" # the base hostname & protocol for your site, e.g. http://example.com
+# =============================================================================
+# HEEN THEME - JEKYLL CONFIGURATION (_config.yml)
+# =============================================================================
+# Jekyll 시스템 설정 및 빌드 프로세스 제어
+# 변경 시 Jekyll 재시작 필요
 
-# 날짜 형식 설정
-# minima:
-#   date_format: "%Y-%m-%d"
+# ===================================
+# 기본 사이트 정보 (시스템 식별용)
+# ===================================
+title: "Heen"
+email: "leetaewon@getsocial.kr"
+description: "Modern Jekyll theme with Crafto integration - Premium design meets Jekyll simplicity"
+baseurl: ""
+url: "https://heen.kr"
 
-#-------------------------------
-# Build Settings
+# SEO 및 메타데이터
+lang: "ko"
+timezone: "Asia/Seoul"
+encoding: "utf-8"
+
+# 테마 메타정보
+heen-theme:
+  name: "Heen"
+  version: "1.0.0"
+  author: "AI Tech Guide"
+  license: "MIT"
+  repository: "https://github.com/heen-theme/heen"
+
+# ===================================
+# Jekyll 엔진 설정
+# ===================================
 markdown: kramdown
-permalink: /:title/
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+highlighter: rouge
+permalink: /:categories/:title/
+excerpt_separator: <!--more-->
 
-paginate: 7
-paginate_path: "/blog/page/:num"
+# Kramdown 설정
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: text
+    css_class: 'highlight'
 
+# ===================================
+# 페이지네이션
+# ===================================
+paginate: 9
+paginate_path: "/blog/page-:num/"
 
-#-------------------------------
-# Collections
+# ===================================
+# Collections 정의 (확장 가능한 구조)
+# ===================================
 collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
   pages:
     output: true
     permalink: /:name/
-  posts:
-    output: true
-    permalink: /blog/:slug/
-  projects:
-    output: true
-    permalink: /project/:slug/
-  categories:
-    output: true
-    permalink: /category/:name/
+  testimonials:
+    output: false
+  team:
+    output: false
 
-# Pages Path
+# ===================================
+# 기본 Front Matter 설정
+# ===================================
 defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      author: "Heen Team"
+      comments: true
+      share: true
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
+      author: "Heen Team"
+      show_related: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      show_sidebar: false
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
 
+# ===================================
+# SCSS 빌드 설정
+# ===================================
 sass:
   sass_dir: _sass
   style: compressed
+  sourcemap: development
+
+# ===================================
+# 플러그인
+# ===================================
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# ===================================
+# 빌드 제외
+# ===================================
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - package.json
+  - package-lock.json
+  - webpack.config.js
+  - README.md
+  - LICENSE
+  - netlify.toml
+  - .gitignore
+
+# ===================================
+# 개발 모드 설정
+# ===================================
+livereload: true
+incremental: true
+
+# ===================================
+# 압축 설정
+# ===================================
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+
+# ===================================
+# Jekyll 4.0+ 설정
+# ===================================
+strict_front_matter: true
+strict_variables: false
+
+# ===================================
+# 보안 설정
+# ===================================
+safe: true
+whitelist:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
