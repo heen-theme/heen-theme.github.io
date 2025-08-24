@@ -4,48 +4,50 @@
 # 콘텐츠 및 UI 설정 (개발 서버 재시작 없이 변경 가능)
 
 # ===================================
-# 사이트 브랜딩
+# 사이트 설정
 # ===================================
-branding:
-  logo: "/assets/images/logo.svg"
-  logo_alt: "/assets/images/logo-alt.svg"
-  favicon: "/assets/images/favicon.ico"
-  brand_color: "#2563eb"
-  secondary_color: "#64748b"
-  tagline: "Modern Jekyll theme with Crafto integration"
+title: 흰 (Heen)
+description: "A modern Jekyll theme"
+logo: "/assets/images/logo/logo.png"
+logo_dark: "/assets/images/logo/logo-dark.png"
+favicon: "/favicon.ico"
+color_scheme: "auto"
+brand_color: "#2563eb"
+secondary_color: "#64748b"
+tagline: "Modern Jekyll theme"
   
 # ===================================
 # 메인 네비게이션
 # ===================================
 navigation:
   main:
-    - name: "Home"
+    - title: "Home"
       url: "/"
       icon: "fas fa-home"
-    - name: "About"
+    - title: "About"
       url: "/about/"
       icon: "fas fa-user"
-    - name: "Projects"
+    - title: "Projects"
       url: "/projects/"
       icon: "fas fa-briefcase"
-    - name: "Blog" 
+    - title: "Blog"
       url: "/blog/"
       icon: "fas fa-blog"
-    - name: "Contact"
+    - title: "Contact"
       url: "/contact/"
       icon: "fas fa-envelope"
   
   mobile:
-    - name: "Home"
+    - title: "Home"
       url: "/"
       icon: "fas fa-home"
-    - name: "Projects"
+    - title: "Projects"
       url: "/projects/"
       icon: "fas fa-briefcase"
-    - name: "Blog"
+    - title: "Blog"
       url: "/blog/"
       icon: "fas fa-blog"
-    - name: "Contact"
+    - title: "Contact"
       url: "/contact/"
       icon: "fas fa-envelope"
 
