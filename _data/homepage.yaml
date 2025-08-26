@@ -12,7 +12,7 @@ hero:
 #-------------------------------
 # About Section Settings
 about:
-  enable: false
+  enable: true
   title: "About"
   description: 흰 테마 소개
   image: "/assets/images/sites/about-image.jpg"
