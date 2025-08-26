@@ -1,0 +1,160 @@
+---
+layout: default
+title: 웹소설 창작 인사이트 - Grid 스타일
+description: 카드형 그리드 레이아웃으로 구성된 블로그 아카이브 페이지입니다.
+image: '/images/cover/blog-cover.jpg'
+permalink: /blog/grid/
+---
+
+{%- comment -%}
+=================================================
+HEEN THEME - BLOG GRID LAYOUT (Crafto 기반)
+=================================================
+Crafto 템플릿의 blog-grid 스타일을 Jekyll Mastery 방식으로 재구성
+- 반응형 그리드 시스템 (4col → 3col → 2col → 1col)
+- 카드형 레이아웃 with 그림자 효과
+- 카테고리, 날짜, 요약문 표시
+- 호버 효과 및 애니메이션
+=================================================
+{%- endcomment -%}
+
+<div class="container">
+  <div class="page-head">
+    {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+    
+    <!-- 레이아웃 스타일 네비게이션 -->
+    <div class="layout-navigation">
+      <a href="/blog/" class="btn-back-to-main">← 메인 블로그로 돌아가기</a>
+      <div class="layout-links">
+        <span class="current-layout">Grid 스타일 (현재)</span>
+        <a href="/blog/simple/" class="layout-link">Simple 스타일</a>
+        <a href="/blog/renva/" class="layout-link">Renva 스타일</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Grid Section (Crafto Style) -->
+<section class="pt-0 ps-10 pe-10 xl-ps-2 xl-pe-2 sm-mx-0">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <ul class="blog-grid blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
+          <li class="grid-sizer"></li>
+          
+          <!-- Jekyll Posts Loop -->
+          {% if site.posts.size > 0 %}
+            {% for post in paginator.posts %}
+            <li class="grid-item">
+              <div class="card border-0 border-radius-4px overflow-hidden box-shadow-quadruple-large box-shadow-quadruple-large-hover h-100">
+                
+                <!-- Post Image -->
+                <div class="blog-image position-relative overflow-hidden">
+                  {% if post.image %}
+                    <a href="{{ post.url | relative_url }}">
+                      <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" />
+                    </a>
+                  {% else %}
+                    <a href="{{ post.url | relative_url }}">
+                      <img src="{{ site.data.settings.blog.fallback_image | default: '/assets/images/blog/default.jpg' }}" alt="{{ post.title | escape }}" />
+                    </a>
+                  {% endif %}
+                  
+                  <!-- Categories Badge -->
+                  {% if post.categories.size > 0 %}
+                    <div class="blog-categories">
+                      {% for category in post.categories limit:1 %}
+                        <a href="{{ '/blog/category/' | append: category | downcase | relative_url }}" 
+                           class="categories-btn bg-white text-dark-gray text-dark-gray-hover text-uppercase alt-font fw-600">
+                          {{ category }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+                
+                <!-- Post Content -->
+                <div class="card-body pt-35px pb-35px ps-35px pe-35px xl-p-25px">
+                  <!-- Date and Reading Time -->
+                  <div class="post-meta mb-15px">
+                    {% if site.data.settings.blog.show_author and post.author %}
+                      <span class="fs-13 text-uppercase d-inline-block me-15px">
+                        <a href="#" class="text-dark-gray text-dark-gray-hover fw-600">{{ post.author }}</a>
+                      </span>
+                    {% endif %}
+                    
+                    <span class="fs-13 text-uppercase">
+                      <a href="{{ post.url | relative_url }}" class="blog-date text-dark-gray-hover">
+                        {{ post.date | date: "%d %B %Y" }}
+                      </a>
+                    </span>
+                    
+                    {% if site.data.settings.blog.show_reading_time %}
+                      {% assign words = post.content | number_of_words %}
+                      {% assign reading_time = words | divided_by: 200 | plus: 1 %}
+                      <span class="fs-13 text-uppercase ms-15px text-medium-gray">{{ reading_time }} min read</span>
+                    {% endif %}
+                  </div>
+                  
+                  <!-- Post Title -->
+                  <a href="{{ post.url | relative_url }}" 
+                     class="card-title mb-15px fw-600 fs-20 lh-30 text-dark-gray text-dark-gray-hover d-inline-block">
+                    {{ post.title | escape }}
+                  </a>
+                  
+                  <!-- Post Excerpt -->
+                  {% if site.data.settings.blog.show_excerpt %}
+                    <p class="mb-20px">
+                      {% if post.excerpt %}
+                        {% assign excerpt_words = post.excerpt | strip_html | truncatewords: 25 %}
+                        {{ excerpt_words }}
+                      {% else %}
+                        {% assign content_words = post.content | strip_html | truncatewords: 25 %}
+                        {{ content_words }}
+                      {% endif %}
+                    </p>
+                  {% endif %}
+                  
+                  <!-- Read More Link -->
+                  <a href="{{ post.url | relative_url }}" 
+                     class="card-link alt-font fs-12 text-uppercase text-dark-gray text-dark-gray-hover fw-700">
+                    Continue Reading
+                    <i class="feather icon-feather-arrow-right icon-very-small ms-5px"></i>
+                  </a>
+                  
+                  <!-- Tags -->
+                  {% if site.data.settings.blog.show_tags and post.tags.size > 0 %}
+                    <div class="post-tags mt-20px">
+                      {% for tag in post.tags limit:3 %}
+                        <a href="{{ '/blog/tag/' | append: tag | downcase | relative_url }}" 
+                           class="tag-link fs-12 text-uppercase text-medium-gray me-10px">
+                          #{{ tag }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          {% else %}
+            <!-- No Posts Message -->
+            <li class="grid-item col-12">
+              <div class="text-center py-5">
+                <h3 class="text-medium-gray mb-20px">아직 작성된 글이 없습니다.</h3>
+                <p class="text-medium-gray">곧 유용한 콘텐츠를 준비해서 찾아뵙겠습니다.</p>
+              </div>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include pagination.html %}

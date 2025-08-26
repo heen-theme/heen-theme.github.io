@@ -1,0 +1,51 @@
+---
+layout: default
+title: 웹소설 창작 인사이트 - Renva 스타일
+description: 기존 Renva 테마 스타일의 블로그 아카이브 페이지입니다.
+image: '/images/cover/blog-cover.jpg'
+permalink: /blog/renva/
+---
+
+{%- comment -%}
+=================================================
+HEEN THEME - RENVA STYLE BLOG LAYOUT
+=================================================
+기존 Renva 테마의 블로그 레이아웃을 보존하는 독립 페이지
+URL: /blog/renva/ 로 직접 접근 가능
+메인 index.html에서도 ?style=renva로 동일한 레이아웃 사용
+=================================================
+{%- endcomment -%}
+
+<div class="container">
+  <div class="page-head">
+    {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+    
+    <!-- 다른 레이아웃으로 돌아가는 네비게이션 -->
+    <div class="layout-navigation">
+      <a href="/blog/" class="btn-back-to-main">← 메인 블로그로 돌아가기</a>
+      <div class="layout-links">
+        <a href="/blog/?style=grid" class="layout-link">Grid 스타일</a>
+        <a href="/blog/?style=simple" class="layout-link">Simple 스타일</a>
+        <span class="current-layout">Renva 스타일 (현재)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 기존 Renva 스타일 블로그 레이아웃 -->
+<div class="container blog-page">
+  <div class="row grid">
+    {% if site.posts.size > 0 %}
+      {% for post in paginator.posts offset:0 %}
+        {% include article.html %}
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% include pagination.html %}

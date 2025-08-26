@@ -5,6 +5,27 @@ description: 기초 이론부터 고급 AI 활용법까지, 웹소설 창작의 
 image: '/images/cover/blog-cover.jpg'
 ---
 
+{%- comment -%}
+=================================================
+HEEN THEME - BLOG ARCHIVE LAYOUT SELECTOR
+=================================================
+블로그 레이아웃 스타일을 동적으로 선택할 수 있는 시스템
+URL 파라미터 또는 설정을 통해 다양한 스타일 적용 가능
+
+사용 예시:
+- /blog/ (기본 grid 스타일)
+- /blog/?style=grid (그리드 스타일)
+- /blog/?style=simple (심플 스타일)  
+- /blog/?style=renva (기존 Renva 스타일)
+=================================================
+{%- endcomment -%}
+
+{%- assign blog_style = site.data.settings.blog.layout_style | default: 'grid' -%}
+{%- if page.url contains '?style=' -%}
+  {%- assign url_style = page.url | split: '?style=' | last | split: '&' | first -%}
+  {%- assign blog_style = url_style -%}
+{%- endif -%}
+
 <div class="container">
   <div class="page-head">
     {% if page.title %}
@@ -13,17 +34,36 @@ image: '/images/cover/blog-cover.jpg'
     {% if page.description %}
       <p class="page-description">{{ page.description }}</p>
     {% endif %}
-  </div>
-</div>
-
-<div class="container blog-page">
-  <div class="row grid">
-    {% if site.posts.size > 0 %}
-      {% for post in paginator.posts offset:0 %}
-        {% include article.html %}
-      {% endfor %}
+    
+    <!-- 블로그 레이아웃 선택 버튼 -->
+    {% if site.data.settings.blog.layout_selector_enabled %}
+    <div class="blog-layout-selector">
+      <div class="layout-buttons">
+        <a href="/blog/?style=grid" class="layout-btn {% if blog_style == 'grid' %}active{% endif %}">
+          <i class="fas fa-th"></i> Grid
+        </a>
+        <a href="/blog/?style=simple" class="layout-btn {% if blog_style == 'simple' %}active{% endif %}">
+          <i class="fas fa-list"></i> Simple
+        </a>
+        <a href="/blog/?style=renva" class="layout-btn {% if blog_style == 'renva' %}active{% endif %}">
+          <i class="fas fa-columns"></i> Renva
+        </a>
+      </div>
+    </div>
     {% endif %}
   </div>
 </div>
+
+<!-- 선택된 스타일에 따른 레이아웃 렌더링 -->
+{%- case blog_style -%}
+  {%- when 'grid' -%}
+    {% include_relative blog-grid.html %}
+  {%- when 'simple' -%}  
+    {% include_relative blog-simple.html %}
+  {%- when 'renva' -%}
+    {% include_relative blog-renva.html %}
+  {%- else -%}
+    {% include_relative blog-grid.html %}
+{%- endcase -%}
 
 {% include pagination.html %}

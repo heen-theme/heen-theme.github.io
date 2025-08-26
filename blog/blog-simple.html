@@ -1,0 +1,171 @@
+---
+layout: default
+title: 웹소설 창작 인사이트 - Simple 스타일
+description: 세로형 오버레이 레이아웃으로 구성된 블로그 아카이브 페이지입니다.
+image: '/images/cover/blog-cover.jpg'
+permalink: /blog/simple/
+---
+
+{%- comment -%}
+=================================================
+HEEN THEME - BLOG SIMPLE LAYOUT (Crafto 기반)
+=================================================
+Crafto 템플릿의 blog-simple 스타일을 Jekyll Mastery 방식으로 재구성
+- 세로형 카드 레이아웃 (Masonry 스타일)
+- 대형 이미지 with 오버레이 효과
+- 호버 시 그라데이션 오버레이
+- 미니멀한 텍스트 표시
+=================================================
+{%- endcomment -%}
+
+<div class="container">
+  <div class="page-head">
+    {% if page.title %}
+      <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+    {% if page.description %}
+      <p class="page-description">{{ page.description }}</p>
+    {% endif %}
+    
+    <!-- 레이아웃 스타일 네비게이션 -->
+    <div class="layout-navigation">
+      <a href="/blog/" class="btn-back-to-main">← 메인 블로그로 돌아가기</a>
+      <div class="layout-links">
+        <a href="/blog/grid/" class="layout-link">Grid 스타일</a>
+        <span class="current-layout">Simple 스타일 (현재)</span>
+        <a href="/blog/renva/" class="layout-link">Renva 스타일</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Blog Simple Section (Crafto Style) -->
+<section class="pt-0 ps-7 pe-7 xl-ps-2 xl-pe-2 xs-px-0">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <ul class="blog-simple blog-wrapper grid-loading grid grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
+          <li class="grid-sizer"></li>
+          
+          <!-- Jekyll Posts Loop -->
+          {% if site.posts.size > 0 %}
+            {% for post in paginator.posts %}
+            <li class="grid-item">
+              <figure class="position-relative mb-0 box-hover">
+                
+                <!-- Post Image with Overlay -->
+                <div class="blog-image">
+                  {% if post.image %}
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" />
+                  {% else %}
+                    <img src="{{ site.data.settings.blog.fallback_image | default: 'https://placehold.co/800x1145' }}" alt="{{ post.title | escape }}" />
+                  {% endif %}
+                  
+                  <!-- Gradient Overlay -->
+                  <span class="bg-gradient-gray-light-dark-transparent position-absolute opacity-6 top-0px left-0px w-100 h-100"></span>
+                </div>
+                
+                <!-- Post Content Overlay -->
+                <figcaption class="d-flex flex-column h-100">
+                  
+                  <!-- Hover Icon -->
+                  <div class="my-auto w-100 text-center blog-hover-icon">
+                    <a href="{{ post.url | relative_url }}" class="d-inline-block">
+                      <i class="line-icon-Arrow-OutRight icon-extra-large text-white"></i>
+                    </a>
+                  </div>
+                  
+                  <!-- Post Info -->
+                  <div class="position-relative post-content p-14 text-center last-paragraph-no-margin">
+                    <div class="position-relative z-index-2 overflow-hidden">
+                      
+                      <!-- Date and Category -->
+                      <div class="post-meta mb-10px">
+                        <a href="{{ post.url | relative_url }}" 
+                           class="d-inline-block fs-15 text-gradient-light-blue-light-turquoise mb-5px text-uppercase fw-600">
+                          {{ post.date | date: "%d %B %Y" }}
+                        </a>
+                        
+                        {% if post.categories.size > 0 %}
+                          <span class="fs-13 text-white opacity-8 d-block">
+                            {% for category in post.categories limit:1 %}
+                              {{ category }}
+                            {% endfor %}
+                          </span>
+                        {% endif %}
+                      </div>
+                      
+                      <!-- Title -->
+                      <a href="{{ post.url | relative_url }}" 
+                         class="card-title fs-20 alt-font fw-500 text-white mb-0 d-block">
+                        {{ post.title | escape }}
+                      </a>
+                      
+                      <!-- Author (Optional) -->
+                      {% if site.data.settings.blog.show_author and post.author %}
+                        <div class="post-author mt-10px">
+                          <span class="fs-13 text-white opacity-7">
+                            by {{ post.author }}
+                          </span>
+                        </div>
+                      {% endif %}
+                      
+                      <!-- Reading Time (Optional) -->
+                      {% if site.data.settings.blog.show_reading_time %}
+                        {% assign words = post.content | number_of_words %}
+                        {% assign reading_time = words | divided_by: 200 | plus: 1 %}
+                        <div class="reading-time mt-5px">
+                          <span class="fs-12 text-white opacity-6">
+                            {{ reading_time }} min read
+                          </span>
+                        </div>
+                      {% endif %}
+                      
+                      <!-- Tags (Small Display) -->
+                      {% if site.data.settings.blog.show_tags and post.tags.size > 0 %}
+                        <div class="post-tags-simple mt-10px">
+                          {% for tag in post.tags limit:2 %}
+                            <span class="tag-simple fs-11 text-white opacity-6 me-8px">
+                              #{{ tag }}
+                            </span>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                      
+                      <!-- Continue Reading -->
+                      <div class="hover-text">
+                        <a href="{{ post.url | relative_url }}" 
+                           class="btn btn-link-gradient btn-medium text-white thin mt-20px mb-5px opacity-6 fw-300">
+                          Continue reading
+                          <span class="bg-white"></span>
+                        </a>
+                      </div>
+                      
+                    </div>
+                    
+                    <!-- Dark Overlay Box -->
+                    <div class="box-overlay bg-dark-slate-blue"></div>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+            {% endfor %}
+          {% else %}
+            <!-- No Posts Message -->
+            <li class="grid-item col-12">
+              <figure class="position-relative mb-0 text-center py-5">
+                <div class="blog-image bg-light-gray d-flex flex-column justify-content-center align-items-center" style="height: 400px;">
+                  <i class="fas fa-blog fa-3x text-medium-gray mb-20px"></i>
+                  <h3 class="text-medium-gray mb-20px">아직 작성된 글이 없습니다</h3>
+                  <p class="text-medium-gray">곧 유용한 콘텐츠를 준비해서 찾아뵙겠습니다.</p>
+                </div>
+              </figure>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include pagination.html %}
