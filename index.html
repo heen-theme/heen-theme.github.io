@@ -2,17 +2,39 @@
 layout: default
 ---
 
-<h1>{{ site.title }}</h1>
+{% assign hero = site.data.homepage.hero %}
+{% include section-hero.html 
+   title=hero.title
+   subtitle=hero.subtitle
+   description=hero.description
+   role=hero.role
+   image=hero.image
+   button_text=hero.button_text
+   button_link=hero.button_link
+   enable=hero.enable %}
 
-{% include section-hero.html %}
+{% assign about = site.data.homepage.about %}
+{% include section-about.html 
+   title=about.title
+   description=about.description
+   image=about.image
+   button_text=about.button_text
+   button_link=about.button_link
+   enable=about.enable %}
 
-{% include section-about.html %}
+<!-- 블로그 최근 글 -->
+{% assign blog = site.data.homepage.blog %}
+{% include section-blog.html 
+   title=blog.title
+   description=blog.description
+   button_text=blog.button_text
+   button_link=blog.button_link
+   limit=blog.limit
+   enable=blog.enable %}
 
 {% include section-process.html %}
 
 {% include section-testimonials.html %}
-
-{% include section-blog.html %}
 
 <!-- 홈페이지 FAQ (챗봇 버튼 포함) -->
 {% assign homepage_faq = site.data.homepage.faq %}

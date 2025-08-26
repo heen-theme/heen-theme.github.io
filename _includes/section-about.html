@@ -1,4 +1,37 @@
-{% if site.data.settings.about.enable == true %}
+{% comment %}
+=================================================
+SECTION ABOUT TEMPLATE (재사용 가능한 버전)
+=================================================
+
+사용법:
+<!-- 복사할 코드 시작 -->
+{% assign about = site.data.YOUR_PAGE.about %}
+{% include section-about.html 
+   title=about.title
+   description=about.description
+   image=about.image
+   button_text=about.button_text
+   button_link=about.button_link
+   enable=about.enable %}
+<!-- 복사할 코드 끝 -->
+
+필수 YAML 구조:
+about:
+  enable: true
+  title: "섹션 제목"
+  description: "섹션 설명"
+  image: "/assets/images/sites/about-image.jpg"
+  button_text: "버튼 텍스트 (선택사항)"
+  button_link: "/링크/ (선택사항)"
+
+예시:
+- 홈페이지: site.data.homepage.about
+- 소개: site.data.about.main_section
+- 서비스: site.data.services.company_info
+=================================================
+{% endcomment %}
+
+{% if include.enable == true %}
 <div class="container-big">
   <!-- begin about -->
   <section class="section about">
@@ -7,25 +40,25 @@
         <div class="col col-12">
           <div class="about__inner">
 
-            {% if site.data.settings.about.about_image %}
+            {% if include.image %}
             <div class="col col-6 col-t-8 col-m-10 push-3 push-t-2 push-m-1">
               <div class="about__image">
-                <img class="lazy" data-src="{{ site.data.settings.about.about_image }}" alt="{{ site.data.settings.about.about_title }}">
+                <img class="lazy" data-src="{{ include.image }}" alt="{{ include.title }}">
               </div>
             </div>
             {% endif %}
 
             <div class="section__info">
-              {% if site.data.settings.about.about_title %}
-                <h2 class="section__title">{{ site.data.settings.about.about_title }}</h2>
+              {% if include.title %}
+                <h2 class="section__title">{{ include.title }}</h2>
               {% endif %}
-              {% if site.data.settings.about.about_description %}
-                <p class="section__description">{{ site.data.settings.about.about_description }}</p>
+              {% if include.description %}
+                <p class="section__description">{{ include.description }}</p>
               {% endif %}
             </div>
             <div class="section__button" style="text-align: center; padding-top: 50px;">
-              {% if site.data.settings.about.about_button_text %}
-                <a href="{{ site.data.settings.about.about_button_link }}" class="button button--primary">{{ site.data.settings.about.about_button_text }}</a>
+              {% if include.button_text %}
+                <a href="{{ include.button_link }}" class="button button--primary">{{ include.button_text }}</a>
               {% endif %}              
             </div>
           </div>

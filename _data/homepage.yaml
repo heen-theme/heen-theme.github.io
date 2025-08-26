@@ -1,11 +1,31 @@
+#-------------------------------
+# Hero Settings
 hero:
-  title: "Modern Jekyll Theme"
-  subtitle: "Built with Crafto Integration"
-  description: "Create stunning websites with ease"
-  buttons:
-    - text: "Get Started"
-      url: "/docs/"
-      style: "primary"
+  enable: true
+  role: "역할/직책 (선택사항)"
+  title: "흰 테마 (Heen Theme)"
+  subtitle: "Flexible and Automated Jekyll Theme"
+  description: "유연하고 자동화되어 무한 확장이 가능한 지킬 테마"
+  button_text: "흰 테마 자세히 알아보기"
+  button_link: "/about/"
+
+#-------------------------------
+# About Section Settings
+about:
+  enable: false
+  title: "About"
+  description: 흰 테마 소개
+  image: "/assets/images/sites/about-image.jpg"
+  button_text: "흰 테마 자세히 알아보기"
+  button_link: "/about/"
+
+blog:
+  enable: true
+  title: "최근 게시물"
+  description: "기술과 AI에 대한 최신 인사이트를 공유합니다"
+  button_text: "전체 게시물 보기"
+  button_link: "/blog/"
+  limit: 3  # 표시할 포스트 개수
 
 services:
   title: "What We Offer"

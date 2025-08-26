@@ -24,9 +24,6 @@ navigation:
     - title: "Home"
       url: "/"
       icon: "fas fa-home"
-    - title: "About"
-      url: "/about/"
-      icon: "fas fa-user"
     - title: "Projects"
       url: "/projects/"
       icon: "fas fa-briefcase"
@@ -86,6 +83,7 @@ blog:
   show_author: true
   related_posts: 3
   comments_enabled: true
+  fallback_image: "/assets/images/sites/default.jpg"  # 폴백 이미지 경로  
 
 # ===================================
 # 프로젝트 설정
