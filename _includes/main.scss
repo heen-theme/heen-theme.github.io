@@ -1,61 +1,52 @@
+---
+---
+
+/*!------------------------------------------------------------------
+[HEEN JEKYLL THEME - MAIN STYLESHEET]
+-------------------------------------------------------------------*/
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 :: Theme name: Heen
-:: Theme Author: Taewon Lee
-:: Version: 1.0
+:: Heen is a modern Jekyll theme built on the foundation of Renva,
+   enhanced with Crafto HTML5 template components. Designed for 
+   developers, creators, and professionals who need flexible,
+   high-performance websites with industry-specific customization.
+:: Author: Taewon Lee
+:: Version: 1.0.0
+:: Built with: Modern SCSS Architecture, CSS Custom Properties
+:: Compatible with: Jekyll 4.0+, GitHub Pages
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>
-:: 1-Tools and Libs
-    1.1-Normalize
-    1.2-Reset
-    1.3-Shared
-    1.4-Syntax Highlighting
-    1.5-Grid
-    1.6-Animate
-    1.7-Splide
-:: 2-Base Styles
-    2.1-Base
-:: 3-Modules
-    3.1-Header
-    3.2-Search
-    3.3-Pagination
-    3.4-Buttons
-    3.5-Gallery
-    3.6-Hero
-    3.7-Projects
-    3.8-Testimonials
-    3.9-Article
-    3.10-Share
-    3.11-Page Navigation
-    3.12-About
-    3.13-Faq
-    3.14-Subscribe
-    3.15-Footer
-    3.16-Sections
-    3.17-Contact
-:: 4-Layouts
-    4.1-Post
-    4.2-Project
-    4.3-Tags Page
+:: Architecture Overview
+    00-Settings: Variables, colors, mixins, helpers
+    01-Tools: Normalize, reset, utilities, animations  
+    02-Base: Typography, forms, basic elements
+    03-Modules: Header, footer, cards, buttons, navigation
+    04-Layouts: Page layouts, post layouts, grid systems
+    05-Custom: Project-specific customizations
+    11-Crafto-Base: Crafto foundation system
+    12-Crafto-Modules: Crafto UI components
+    20-Industries: Industry-specific style variants
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 # =======================
 # 00-Settings (Configuration)  
 # =======================
-@import '00-settings/variables';    # 기본 변수
-@import '00-settings/color-scheme'; # 색상 팔레트
-@import '00-settings/mixins';       # 믹스인
-@import '00-settings/helpers';      # 헬퍼
+@import '00-settings/variables';
+@import '00-settings/color-scheme'; 
+@import '00-settings/mixins';
+@import '00-settings/helpers';
 
 # =======================
 # 01-Tools (Utilities & Libraries)
 # =======================
-@import '01-tools/normalize';           # 노멀라이즈
-@import '01-tools/reset';               # 리셋
-@import '01-tools/shared';              # 공유
-@import '01-tools/syntax-highlighting'; # 문법 강조
-@import '01-tools/grid';                # 그리드
-@import '01-tools/animate';             # 애니메이트
+@import '01-tools/normalize';
+@import '01-tools/reset';
+@import '01-tools/shared';
+@import '01-tools/syntax-highlighting';
+@import '01-tools/grid';
+@import '01-tools/animate';
 @import '01-tools/splide';
 
 # =======================
@@ -66,57 +57,57 @@
 # =======================
 # 03-Modules (UI Components)
 # =======================
-@import '03-modules/header';            # 헤더
-@import '03-modules/search';            # 검색
-@import '03-modules/pagination';        # 페이지네이션
-@import '03-modules/buttons';           # 버튼
-@import '03-modules/gallery';           # 갤러리
-@import '03-modules/hero';              # 히어로
-@import '03-modules/projects';          # 프로젝트
-@import '03-modules/testimonials';      # 고객 후기
-@import '03-modules/article';           # 아티클
-@import '03-modules/share';             # 공유
-@import '03-modules/page-navigation';   # 페이지 네비게이션
-@import '03-modules/about';             # About
-@import '03-modules/faq';               # FAQ
-@import '03-modules/subscribe';         # 구독
-@import '03-modules/footer';            # 푸터
-@import '03-modules/sections';          # 섹션
-@import '03-modules/contact';           # 연락처
+@import '03-modules/header';
+@import '03-modules/search';
+@import '03-modules/pagination';
+@import '03-modules/buttons';
+@import '03-modules/gallery';
+@import '03-modules/hero';
+@import '03-modules/projects';
+@import '03-modules/testimonials';
+@import '03-modules/article';
+@import '03-modules/share';
+@import '03-modules/page-navigation';
+@import '03-modules/about';
+@import '03-modules/faq';
+@import '03-modules/subscribe';
+@import '03-modules/footer';
+@import '03-modules/sections';
+@import '03-modules/contact';
 
 # =======================
 # 04-Layouts (Page Structure)
 # =======================
-@import '04-layouts/post';          # 포스트 레이아웃
-@import '04-layouts/project';       # 프로젝트 레이아웃
-@import '04-layouts/tags-page';     # 태그 페이지
+@import '04-layouts/post';
+@import '04-layouts/project';
+@import '04-layouts/tags-page';
 
 # =======================
 # 05-Custom (Project Specific)
 # =======================
-@import '05-custom/code-styles';    # 코드 스타일
-@import '05-custom/custom';         # 커스텀 스타일
+@import '05-custom/code-styles';
+@import '05-custom/custom';
 
 # =======================
 # 11-Crafto-Base (Crafto Foundation)
 # =======================
-@import '11-crafto-base/core';      # Crafto 핵심
-@import '11-crafto-base/variables'; # Crafto 변수
-@import '11-crafto-base/mixins';    # Crafto 믹스인
-@import '11-crafto-base/utilities'; # Crafto 유틸리티
+@import '11-crafto-base/core';
+@import '11-crafto-base/variables';
+@import '11-crafto-base/mixins';
+@import '11-crafto-base/utilities';
 
 # =======================
 # 12-Crafto-Modules (Crafto Components) 
 # =======================
-@import '12-crafto-modules/hero-sections';  # 히어로 섹션
-@import '12-crafto-modules/feature-grids';  # 피처 그리드
-@import '12-crafto-modules/testimonials';   # 고객 후기
-@import '12-crafto-modules/portfolio';      # 포트폴리오
-@import '12-crafto-modules/team';           # 팀 소개
-@import '12-crafto-modules/pricing';        # 가격표
-@import '12-crafto-modules/contact-forms';  # 연락처 폼
-@import '12-crafto-modules/cta-banners';    # CTA 배너
-@import '12-crafto-modules/blog-layouts';   # 블로그 레이아웃
+@import '12-crafto-modules/hero-sections';
+@import '12-crafto-modules/feature-grids';
+@import '12-crafto-modules/testimonials';
+@import '12-crafto-modules/portfolio';
+@import '12-crafto-modules/team';
+@import '12-crafto-modules/pricing';
+@import '12-crafto-modules/contact-forms';
+@import '12-crafto-modules/cta-banners';
+@import '12-crafto-modules/blog-layouts';
 
 # =======================
 # 20-Industries (Industry-Specific Styles)
