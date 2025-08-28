@@ -16,11 +16,11 @@ URL 파라미터 또는 설정을 통해 다양한 스타일 적용 가능
 - /blog/ (기본 grid 스타일)
 - /blog/?style=grid (그리드 스타일)
 - /blog/?style=simple (심플 스타일)  
-- /blog/?style=renva (기존 Renva 스타일)
+- /blog/?style=renva (기존 renva 스타일)
 =================================================
 {%- endcomment -%}
 
-{%- assign blog_style = site.data.settings.blog.layout_style | default: 'grid' -%}
+{%- assign blog_style = site.data.settings.blog.layout_style | renva: 'grid' -%}
 {%- if page.url contains '?style=' -%}
   {%- assign url_style = page.url | split: '?style=' | last | split: '&' | first -%}
   {%- assign blog_style = url_style -%}
@@ -46,7 +46,7 @@ URL 파라미터 또는 설정을 통해 다양한 스타일 적용 가능
           <i class="fas fa-list"></i> Simple
         </a>
         <a href="/blog/?style=renva" class="layout-btn {% if blog_style == 'renva' %}active{% endif %}">
-          <i class="fas fa-columns"></i> Renva
+          <i class="fas fa-columns"></i> renva
         </a>
       </div>
     </div>

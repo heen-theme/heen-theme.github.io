@@ -1,6 +1,3 @@
----
----
-
 /*!------------------------------------------------------------------
 [HEEN JEKYLL THEME - MAIN STYLESHEET]
 -------------------------------------------------------------------*/
@@ -11,7 +8,8 @@
    enhanced with Crafto HTML5 template components. Designed for 
    developers, creators, and professionals who need flexible,
    high-performance websites with industry-specific customization.
-:: Author: Taewon Lee
+:: Original Base: Renva by Anvod Studio (Artem Sheludko)
+:: Enhanced by: AI Tech Guide with Crafto Integration
 :: Version: 1.0.0
 :: Built with: Modern SCSS Architecture, CSS Custom Properties
 :: Compatible with: Jekyll 4.0+, GitHub Pages
@@ -30,88 +28,88 @@
     20-Industries: Industry-specific style variants
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
-# =======================
-# 00-Settings (Configuration)  
-# =======================
+/* =======================
+:: 00-Settings (Configuration)  
+======================= */
 @import '00-settings/variables';
 @import '00-settings/color-scheme'; 
 @import '00-settings/mixins';
 @import '00-settings/helpers';
 
-# =======================
-# 01-Tools (Utilities & Libraries)
-# =======================
-@import '01-tools/normalize';
-@import '01-tools/reset';
-@import '01-tools/shared';
-@import '01-tools/syntax-highlighting';
-@import '01-tools/grid';
-@import '01-tools/animate';
-@import '01-tools/splide';
+/* =======================
+:: 01-Tools (Utilities & Libraries)
+======================= */
+@import "01-tools/normalize";
+@import "01-tools/reset";
+@import "01-tools/shared";
+@import "01-tools/syntax-highlighting";
+@import "01-tools/grid";
+@import "01-tools/animate";
+@import "01-tools/splide";
 
-# =======================
-# 02-Base (Foundation Styles)
-# =======================
-@import '02-base/base';
+/* =======================
+:: 02-Base (Foundation Styles)
+======================= */
+@import "02-base/base";
 
-# =======================
-# 03-Modules (UI Components)
-# =======================
-@import '03-modules/header';
-@import '03-modules/search';
-@import '03-modules/pagination';
-@import '03-modules/buttons';
-@import '03-modules/gallery';
-@import '03-modules/hero';
-@import '03-modules/projects';
-@import '03-modules/testimonials';
-@import '03-modules/article';
-@import '03-modules/share';
-@import '03-modules/page-navigation';
-@import '03-modules/about';
-@import '03-modules/faq';
-@import '03-modules/subscribe';
-@import '03-modules/footer';
-@import '03-modules/sections';
-@import '03-modules/contact';
+/* =======================
+:: 03-Modules (UI Components)
+======================= */
+@import "03-modules/header";
+@import "03-modules/search";
+@import "03-modules/pagination";
+@import "03-modules/buttons";
+@import "03-modules/gallery";
+@import "03-modules/hero";
+@import "03-modules/projects";
+@import "03-modules/testimonials";
+@import "03-modules/article";
+@import "03-modules/share";
+@import "03-modules/page-navigation";
+@import "03-modules/about";
+@import "03-modules/faq";
+@import "03-modules/subscribe";
+@import "03-modules/footer";
+@import "03-modules/sections";
+@import "03-modules/contact";
 
-# =======================
-# 04-Layouts (Page Structure)
-# =======================
-@import '04-layouts/post';
-@import '04-layouts/project';
-@import '04-layouts/tags-page';
+/* =======================
+:: 04-Layouts (Page Structure)
+======================= */
+@import "04-layouts/post";
+@import "04-layouts/project";
+@import "04-layouts/tags-page";
 
-# =======================
-# 05-Custom (Project Specific)
-# =======================
-@import '05-custom/code-styles';
-@import '05-custom/custom';
+/* =======================
+:: 05-Custom (Project Specific)
+======================= */
+@import "05-custom/code-styles";
+@import "05-custom/custom";
 
-# =======================
-# 11-Crafto-Base (Crafto Foundation)
-# =======================
-@import '11-crafto-base/core';
-@import '11-crafto-base/variables';
-@import '11-crafto-base/mixins';
-@import '11-crafto-base/utilities';
+/* =======================
+:: 11-Crafto-Base (Crafto Foundation)
+======================= */
+@import "11-crafto-base/core";
+@import "11-crafto-base/variables";
+@import "11-crafto-base/mixins";
+@import "11-crafto-base/utilities";
 
-# =======================
-# 12-Crafto-Modules (Crafto Components) 
-# =======================
-@import '12-crafto-modules/hero-sections';
-@import '12-crafto-modules/feature-grids';
-@import '12-crafto-modules/testimonials';
-@import '12-crafto-modules/portfolio';
-@import '12-crafto-modules/team';
-@import '12-crafto-modules/pricing';
-@import '12-crafto-modules/contact-forms';
-@import '12-crafto-modules/cta-banners';
-@import '12-crafto-modules/blog-layouts';
+/* =======================
+:: 12-Crafto-Modules (Crafto Components) 
+======================= */
+@import "12-crafto-modules/hero-sections";
+@import "12-crafto-modules/feature-grids";
+@import "12-crafto-modules/testimonials";
+@import "12-crafto-modules/portfolio";
+@import "12-crafto-modules/team";
+@import "12-crafto-modules/pricing";
+@import "12-crafto-modules/contact-forms";
+@import "12-crafto-modules/cta-banners";
+@import "12-crafto-modules/blog-layouts";
 
-# =======================
-# 20-Industries (Industry-Specific Styles)
-# 조건부 로드 - _config.yml의 industry 설정에 따라
-# =======================
-# 이 부분은 조건부로 로드됩니다
-# 예: @import '20-industries/medical'; (medical 업종인 경우)
+/* =======================
+:: 20-Industries (Industry-Specific Styles)
+:: 조건부 로드 - _config.yml의 industry 설정에 따라
+======================= */
+/* 이 부분은 조건부로 로드됩니다 */
+/* 예: @import "20-industries/medical"; (medical 업종인 경우) */

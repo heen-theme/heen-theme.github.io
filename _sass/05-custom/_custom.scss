@@ -1,0 +1,38 @@
+// _sass/05-custom/custom.scss에 추가
+/* =======================
+:: SVG 아이콘 크기 정규화
+======================= */
+svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  
+  &-sm { 
+    width: 0.875em; 
+    height: 0.875em; 
+  }
+  
+  &-lg { 
+    width: 1.25em; 
+    height: 1.25em; 
+  }
+  
+  &-xl { 
+    width: 1.5em; 
+    height: 1.5em; 
+  }
+}
+
+/* Logo 크기 제한 */
+.logo svg,
+.site-logo svg {
+  max-height: 2rem;
+  width: auto;
+}
