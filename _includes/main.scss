@@ -1,11 +1,6 @@
-/*!------------------------------------------------------------------
-[MAIN STYLESHEET]
--------------------------------------------------------------------*/
-
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-:: Template name: Renva
-:: Renva is a modern and bold portfolio Jekyll theme, that transforms simplicity into creativity. Built for innovators and creators, Renva offers a seamless platform for showcasing your work with elegance and style. Its intuitive design ensures that your content stands out, allowing your audience to focus on what truly matters. Whether you’re a designer, artist, or photographer, this theme provides the perfect backdrop for your portfolio, helping you express your unique vision effortlessly.
-:: Template Author: Anvod Studio (Artem Sheludko)
+:: Theme name: Heen
+:: Theme Author: Taewon Lee
 :: Version: 1.0
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
@@ -44,96 +39,88 @@
     4.3-Tags Page
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
+# =======================
+# 00-Settings (Configuration)  
+# =======================
+@import '00-settings/variables';    # 기본 변수
+@import '00-settings/color-scheme'; # 색상 팔레트
+@import '00-settings/mixins';       # 믹스인
+@import '00-settings/helpers';      # 헬퍼
 
-@import '0-settings/variables';
-@import '0-settings/color-scheme';
-@import '0-settings/mixins';
-@import '0-settings/helpers';
+# =======================
+# 01-Tools (Utilities & Libraries)
+# =======================
+@import '01-tools/normalize';           # 노멀라이즈
+@import '01-tools/reset';               # 리셋
+@import '01-tools/shared';              # 공유
+@import '01-tools/syntax-highlighting'; # 문법 강조
+@import '01-tools/grid';                # 그리드
+@import '01-tools/animate';             # 애니메이트
+@import '01-tools/splide';
 
-/* Font Awesome (v6.5.1) */
-@import '0-settings/brands';
-@import '0-settings/solid';
-@import '0-settings/regular';
-@import '0-settings/fontawesome';
+# =======================
+# 02-Base (Foundation Styles)
+# =======================
+@import '02-base/base';
 
+# =======================
+# 03-Modules (UI Components)
+# =======================
+@import '03-modules/header';            # 헤더
+@import '03-modules/search';            # 검색
+@import '03-modules/pagination';        # 페이지네이션
+@import '03-modules/buttons';           # 버튼
+@import '03-modules/gallery';           # 갤러리
+@import '03-modules/hero';              # 히어로
+@import '03-modules/projects';          # 프로젝트
+@import '03-modules/testimonials';      # 고객 후기
+@import '03-modules/article';           # 아티클
+@import '03-modules/share';             # 공유
+@import '03-modules/page-navigation';   # 페이지 네비게이션
+@import '03-modules/about';             # About
+@import '03-modules/faq';               # FAQ
+@import '03-modules/subscribe';         # 구독
+@import '03-modules/footer';            # 푸터
+@import '03-modules/sections';          # 섹션
+@import '03-modules/contact';           # 연락처
 
-/* =======================
-:: 1-Tools and Libs
-======================= */
-/* >>>>>>>>>>>>>> :: 1.1-Normalize <<<<<<<<<<<<<<< */
-@import '1-tools/normalize';
-/* >>>>>>>>>>>>>> :: 1.2-Reset <<<<<<<<<<<<<<< */
-@import '1-tools/reset';
-/* >>>>>>>>>>>>>> :: 1.3-Shared <<<<<<<<<<<<<<< */
-@import '1-tools/shared';
-/* >>>>>>>>>>>>>> :: 1.4-Syntax Highlighting <<<<<<<<<<<<<<< */
-@import '1-tools/syntax-highlighting';
-/* >>>>>>>>>>>>>> :: 1.5-Grid <<<<<<<<<<<<<<< */
-@import '1-tools/grid';
-/* >>>>>>>>>>>>>> :: 1.6-Animate <<<<<<<<<<<<<<< */
-@import '1-tools/animate';
-/* >>>>>>>>>>>>>> :: 1.7-Splide <<<<<<<<<<<<<<< */
-@import '1-tools/splide';
+# =======================
+# 04-Layouts (Page Structure)
+# =======================
+@import '04-layouts/post';          # 포스트 레이아웃
+@import '04-layouts/project';       # 프로젝트 레이아웃
+@import '04-layouts/tags-page';     # 태그 페이지
 
+# =======================
+# 05-Custom (Project Specific)
+# =======================
+@import '05-custom/code-styles';    # 코드 스타일
+@import '05-custom/custom';         # 커스텀 스타일
 
-/* =======================
-:: 2-Base Styles
-======================= */
-/* >>>>>>>>>>>>>> :: 2.1-Base <<<<<<<<<<<<<<< */
-@import '2-base/base';
+# =======================
+# 11-Crafto-Base (Crafto Foundation)
+# =======================
+@import '11-crafto-base/core';      # Crafto 핵심
+@import '11-crafto-base/variables'; # Crafto 변수
+@import '11-crafto-base/mixins';    # Crafto 믹스인
+@import '11-crafto-base/utilities'; # Crafto 유틸리티
 
+# =======================
+# 12-Crafto-Modules (Crafto Components) 
+# =======================
+@import '12-crafto-modules/hero-sections';  # 히어로 섹션
+@import '12-crafto-modules/feature-grids';  # 피처 그리드
+@import '12-crafto-modules/testimonials';   # 고객 후기
+@import '12-crafto-modules/portfolio';      # 포트폴리오
+@import '12-crafto-modules/team';           # 팀 소개
+@import '12-crafto-modules/pricing';        # 가격표
+@import '12-crafto-modules/contact-forms';  # 연락처 폼
+@import '12-crafto-modules/cta-banners';    # CTA 배너
+@import '12-crafto-modules/blog-layouts';   # 블로그 레이아웃
 
-/* =======================
-:: 3-Modules
-======================= */
-/* >>>>>>>>>>>>>> :: 3.1-Header <<<<<<<<<<<<<<< */
-@import '3-modules/header';
-/* >>>>>>>>>>>>>> :: 3.2-Search <<<<<<<<<<<<<<< */
-@import '3-modules/search';
-/* >>>>>>>>>>>>>> :: 3.3-Pagination <<<<<<<<<<<<<<< */
-@import '3-modules/pagination';
-/* >>>>>>>>>>>>>> :: 3.4-Buttons <<<<<<<<<<<<<<< */
-@import '3-modules/buttons';
-/* >>>>>>>>>>>>>> :: 3.5-Gallery <<<<<<<<<<<<<<< */
-@import '3-modules/gallery';
-/* >>>>>>>>>>>>>> :: 3.6-Hero <<<<<<<<<<<<<<< */
-@import '3-modules/hero';
-/* >>>>>>>>>>>>>> :: 3.7-Projects <<<<<<<<<<<<<<< */
-@import '3-modules/projects';
-/* >>>>>>>>>>>>>> :: 3.8-Testimonials <<<<<<<<<<<<<<< */
-@import '3-modules/testimonials';
-/* >>>>>>>>>>>>>> :: 3.9-Article <<<<<<<<<<<<<<< */
-@import '3-modules/article';
-/* >>>>>>>>>>>>>> :: 3.10-Share <<<<<<<<<<<<<<< */
-@import '3-modules/share';
-/* >>>>>>>>>>>>>> :: 3.11-Page Navigation <<<<<<<<<<<<<<< */
-@import '3-modules/page-navigation';
-/* >>>>>>>>>>>>>> :: 3.12-About <<<<<<<<<<<<<<< */
-@import '3-modules/about';
-/* >>>>>>>>>>>>>> :: 3.13-Faq <<<<<<<<<<<<<<< */
-@import '3-modules/faq';
-/* >>>>>>>>>>>>>> :: 3.14-Subscribe <<<<<<<<<<<<<<< */
-@import '3-modules/subscribe';
-/* >>>>>>>>>>>>>> :: 3.15-Footer <<<<<<<<<<<<<<< */
-@import '3-modules/footer';
-/* >>>>>>>>>>>>>> :: 3.16-Sections <<<<<<<<<<<<<<< */
-@import '3-modules/sections';
-/* >>>>>>>>>>>>>> :: 3.17-Contact <<<<<<<<<<<<<<< */
-@import '3-modules/contact';
-
-
-/* =======================
-:: 4-Layouts
-======================= */
-/* >>>>>>>>>>>>>> :: 4.1-Post <<<<<<<<<<<<<<< */
-@import '4-layouts/post';
-/* >>>>>>>>>>>>>> :: 4.2-Project <<<<<<<<<<<<<<< */
-@import '4-layouts/project';
-/* >>>>>>>>>>>>>> :: 4.3-Tags Page <<<<<<<<<<<<<<< */
-@import '4-layouts/tags-page';
-
-/* =======================
-:: 5-Custom
-======================= */
-@import "5-custom/code-styles";
-@import "5-custom/crafto-blog-layouts";
+# =======================
+# 20-Industries (Industry-Specific Styles)
+# 조건부 로드 - _config.yml의 industry 설정에 따라
+# =======================
+# 이 부분은 조건부로 로드됩니다
+# 예: @import '20-industries/medical'; (medical 업종인 경우)
